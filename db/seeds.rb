@@ -8,6 +8,7 @@
 
 puts"destroying the seeds..."
 User.destroy_all
+Company.destroy_all
 #Course.destroy_all
 puts"seeds destroyed. Creating new seeds..."
 
@@ -30,3 +31,10 @@ user7 = User.new(email: "yasmin@gmail.com", password: '123456', username: "yas12
 user7.save
 user8 = User.new(email: "marcela@gmail.com", password: '123456', username: "marcela123", role: "financeiro")
 user8.save
+
+
+company1 = Company.new(name: "Kadora", contact: "Renato", user: User.all.sample)
+company1.save
+
+company2 = Company.new(name: "Petrobras", contact: "Renato", user: User.all.sample)
+company2.save
