@@ -38,3 +38,6 @@ company1.save
 
 company2 = Company.new(name: "Petrobras", contact: "Roberto", user: User.all.sample)
 company2.save
+
+company3 = Company.new(name: "CBO", contact: "Jonathan", user: User.all.sample)
+company3.save
