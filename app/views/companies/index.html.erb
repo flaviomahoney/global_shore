@@ -2,9 +2,11 @@
 
     <div class="cards mt-4">
         <% @companies.each do |company|  %>
-            <div class="card-category-company" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= company.photo_url %>)'>
-                <%= company.name %>
-            </div>
+            <%= link_to company_path(company) do %>
+                <div class="card-category-company" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= company.photo_url %>)'>
+                    <%= company.name %>
+                </div>
+            <% end%> 
         <% end %>
     </div>
 </div>
