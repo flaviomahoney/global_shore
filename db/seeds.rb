@@ -33,11 +33,11 @@ user8 = User.new(email: "marcela@gmail.com", password: '123456', username: "marc
 user8.save
 
 
-company1 = Company.new(name: "Kadora", contact: "Renato", user: User.all.sample)
+company1 = Company.new(name: "Kadora", contact: "Renato", photo_url: "https://res.cloudinary.com/dmcepupsl/image/upload/v1641083397/IMAGEM_KADORA_s0ccn6.png" , user: User.all.sample)
 company1.save
 
-company2 = Company.new(name: "Petrobras", contact: "Roberto", user: User.all.sample)
+company2 = Company.new(name: "Petrobras", contact: "Roberto", photo_url: "https://res.cloudinary.com/dmcepupsl/image/upload/v1641074208/IMAGEM_PETROBRAS_uakjrf.png" , user: User.all.sample)
 company2.save
 
-company3 = Company.new(name: "CBO", contact: "Jonathan", user: User.all.sample)
+company3 = Company.new(name: "CBO", contact: "Jonathan", photo_url: "https://res.cloudinary.com/dmcepupsl/image/upload/v1641083388/IMAGEM_CBO_q15cqm.jpg" , user: User.all.sample)
 company3.save
