@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_02_001837) do
+ActiveRecord::Schema.define(version: 2022_01_03_215743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,19 @@ ActiveRecord::Schema.define(version: 2022_01_02_001837) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "photo_url"
     t.index ["user_id"], name: "index_companies_on_user_id"
+  end
+
+  create_table "opportunities", force: :cascade do |t|
+    t.integer "number"
+    t.date "date"
+    t.string "hour"
+    t.string "internal_code"
+    t.bigint "user_id", null: false
+    t.bigint "company_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_opportunities_on_company_id"
+    t.index ["user_id"], name: "index_opportunities_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,4 +53,6 @@ ActiveRecord::Schema.define(version: 2022_01_02_001837) do
   end
 
   add_foreign_key "companies", "users"
+  add_foreign_key "opportunities", "companies"
+  add_foreign_key "opportunities", "users"
 end
