@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-    before_action :set_pet, only: [:show, :edit, :update, :destroy]
+    before_action :set_company, only: [:show, :edit, :update, :destroy]
     
     def index
         @companies = Company.all
@@ -42,7 +42,7 @@ class CompaniesController < ApplicationController
 
     private
 
-    def set_pet
+    def set_company
       @company = Company.find(params[:id])
     end
   
