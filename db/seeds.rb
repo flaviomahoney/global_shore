@@ -41,3 +41,7 @@ company2.save
 
 company3 = Company.new(name: "CBO", contact: "Jonathan", photo_url: "https://res.cloudinary.com/dmcepupsl/image/upload/v1641083388/IMAGEM_CBO_q15cqm.jpg" , user: User.all.sample)
 company3.save
+
+
+opportunity1 = Opportunity.new(number: "7003726234", date: "06/01/2022", hour: "20H", internal_code: "PETR5247889", user: User.all.sample, company: Company.all.sample)
+opportunity1.save
