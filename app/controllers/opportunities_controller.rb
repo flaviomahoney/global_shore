@@ -9,6 +9,7 @@ class OpportunitiesController < ApplicationController
     end
 
     def new
+        @company = Company.find(params[:company_id])
         @opportunity = Opportunity.new
     end
     
@@ -16,6 +17,7 @@ class OpportunitiesController < ApplicationController
     end
     
     def create
+        @company = Company.find(params[:company_id])
         @opportunity = Opportunity.new(opportunity_params)
         @opportunity.user = current_user
         if @opportunity.save
