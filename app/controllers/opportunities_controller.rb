@@ -17,16 +17,18 @@ class OpportunitiesController < ApplicationController
     end
     
     def create
-        @company = Company.find(params[:company_id])
-        @opportunity = Opportunity.new(opportunity_params)
-        @opportunity.user = current_user
+      @opportunity = Opportunity.new(opportunity_params)
+      @company = Company.find(params[:company_id])
+      @opportunity.user = current_user
+      @opportunity.company = @company
+      
         if @opportunity.save
           flash[:success] = "Object successfully created"
           redirect_to @opportunity
         else
           flash[:error] = "Something went wrong"
           render 'new'
-        end
+      end
     end
     
     def update
