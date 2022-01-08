@@ -3,14 +3,15 @@ class OpportunitiesController < ApplicationController
     
     def index
         @opportunities = Opportunity.all
+        @company = Company.find(params[:company_id])
     end
 
     def show
     end
 
     def new
-        @company = Company.find(params[:company_id])
-        @opportunity = Opportunity.new
+      @company = Company.find(params[:company_id])
+      @opportunity = Opportunity.new
     end
     
     def edit
@@ -50,7 +51,7 @@ class OpportunitiesController < ApplicationController
       @opportunity = Opportunity.find(params[:id])
     end
   
-    def pet_params
+    def opportunity_params
       params.require(:opportunity).permit(:number, :date, :hour, :internal_code)
     end
 end

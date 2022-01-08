@@ -1,13 +1,11 @@
 <div class="container">
-    <%= simple_form_for(@opportunity) do |f| %>
-
+    <%= simple_form_for [@company, @opportunity] do |f| %> 
     <div class="form-inputs">
         <%= f.input :number %>
         <%= f.input :date %>
         <%= f.input :hour %>
         <%= f.input :internal_code %>
-    </div>
-
+    </div>  
     <div class="form-actions">
         <%= f.button :submit , class: "btn btn-flat-log"%>
     </div>
